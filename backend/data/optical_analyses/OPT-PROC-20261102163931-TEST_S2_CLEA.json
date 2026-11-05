@@ -1,0 +1,70 @@
+{
+  "analysis_id": "OPT-PROC-20261102163931-TEST_S2_CLEA",
+  "product_id": "TEST_S2_CLEAR_WATER",
+  "zone_id": "TEST_ZONE",
+  "acquisition_timestamp": null,
+  "processed_at": "2026-11-02T16:39:33.676002Z",
+  "execution_duration_ms": 1907.94,
+  "data_tier": "CALIBRATED_PREVIEW_ANALYSIS",
+  "is_preview": true,
+  "processing_status": "COMPLETED",
+  "uncertainty_margin": 0.08,
+  "spatial_coverage": null,
+  "source_attribution": "European Space Agency (ESA) Sentinel-2 MSI via Copernicus Data Space Ecosystem (CDSE)",
+  "spectral_indicators": {
+    "ndci_chlorophyll_proxy": 0.556,
+    "turbidity_spm_index": 0.111,
+    "ndwi_water_index": -0.222,
+    "algal_bloom_risk": "HIGH",
+    "turbidity_severity": "CLEAR",
+    "anomaly_coverage_sq_km": 0.0,
+    "cloud_coverage_pct": 0.0,
+    "valid_water_coverage_pct": 100.0,
+    "mean_reflectance": {
+      "red": 0.078,
+      "green": 0.275,
+      "blue": 0.431
+    },
+    "direct_observations": {
+      "mean_reflectance_red": 0.0784,
+      "mean_reflectance_green": 0.2745,
+      "mean_reflectance_blue": 0.4314,
+      "cloud_coverage_pct": 0.0,
+      "valid_water_coverage_pct": 100.0
+    },
+    "derived_proxies": {
+      "ndci_chlorophyll_proxy": 0.556,
+      "turbidity_spm_index": 0.111,
+      "ndwi_water_index": -0.222,
+      "algal_bloom_risk": "HIGH",
+      "turbidity_severity": "CLEAR",
+      "anomaly_coverage_sq_km": 0.0,
+      "calculation_method": "EXPERIMENTAL_RGB_PREVIEW_RATIO",
+      "native_bands_used": [],
+      "accuracy_tier": "QUALITATIVE_VISUAL_INDICATOR"
+    }
+  },
+  "visualizations": {
+    "true_color_rgb_png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAgUlEQVR4nNXOMREAIBDAsFINaEIO/kdE/MA1CrL2uZRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMRJnMT5OzD1APM1AUgjlO9kAAAAAElFTkSuQmCC",
+    "chlorophyll_ndci_png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAf0lEQVR4nNXOQREAIAzAsK5C8C8FWYjgsWsUZDiXMomTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOLcDvx6aZQFmUpTKNgAAAABJRU5ErkJggg==",
+    "chlorophyll_index_map_png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAf0lEQVR4nNXOQREAIAzAsK5C8C8FWYjgsWsUZDiXMomTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOImTOLcDvx6aZQFmUpTKNgAAAABJRU5ErkJggg==",
+    "turbidity_spm_png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAgUlEQVR4nNXOQREAIAzAsFINiEAO/tUgYg+uUZC1z6VM4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iTO34GpB6QmAQw35SqQAAAAAElFTkSuQmCC",
+    "turbidity_mask_png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAgUlEQVR4nNXOQREAIAzAsFINiEAO/tUgYg+uUZC1z6VM4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iRO4iTO34GpB6QmAQw35SqQAAAAAElFTkSuQmCC"
+  },
+  "scientific_notes": "Scientific Attribution: Visual indicators are experimental relative proxies derived from 8-bit RGB preview imagery (Green-to-Red and Red-to-Cyan ratios). They provide qualitative spatial plume delineation and do NOT represent standard Sentinel-2 NDCI (which requires calibrated native Band 5 Red Edge at 705 nm and Band 4 Red at 665 nm) or quantitative physical SPM concentration.",
+  "scientific_disclaimer": "Scientific Notice: Preview-derived indicators are experimental visual proxies for qualitative anomaly detection only. Because 8-bit JPEG previews undergo non-linear sRGB gamma-stretching and lossy compression, they DO NOT preserve quantitative physical surface reflectance values. These proxies MUST NOT be asserted as native-band scientific measurements, chemical pollutant concentrations, or toxic algal species identifications without in-situ corroboration.",
+  "quality_flags": [
+    "CLOUD_SCREENING_APPLIED",
+    "WATER_MASK_APPLIED",
+    "VALIDATED_SPECTRAL_RANGE"
+  ],
+  "processing_engine_info": {
+    "engine": "ORCA MultiSpectral Aquatic Processor v2.0",
+    "raster_dimensions": "64x64",
+    "water_pixel_coverage_pct": 100.0,
+    "cloud_pixel_coverage_pct": 0.0,
+    "data_tier": "CALIBRATED_PREVIEW_ANALYSIS",
+    "allow_synthetic_fallback": false
+  },
+  "error_message": null
+}

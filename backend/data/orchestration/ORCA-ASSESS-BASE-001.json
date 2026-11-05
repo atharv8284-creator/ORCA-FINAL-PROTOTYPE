@@ -1,0 +1,234 @@
+{
+  "assessment_id": "ORCA-ASSESS-BASE-001",
+  "status": "COMPLETED",
+  "incident_category": "BASELINE_EVALUATION",
+  "assessment_label": "Nominal Marine Ecosystem Equilibrium (All Parameters Baseline)",
+  "geographic_area": {
+    "zone_id": "zone-01",
+    "zone_name": "Great Barrier Reef (Ribbon Reefs Sector)",
+    "centroid_latitude": -16.8205,
+    "centroid_longitude": 146.215,
+    "boundary_or_bbox": [
+      145.5,
+      -17.5,
+      147.0,
+      -16.0
+    ]
+  },
+  "observation_period": {
+    "earliest_observation": "2026-11-04T04:28:02.380119+00:00",
+    "latest_observation": "2026-11-04T04:28:02.380119+00:00",
+    "time_span_hours": 48
+  },
+  "agent_statuses": {
+    "SAR": "SUCCESS",
+    "OPTICAL": "SUCCESS",
+    "OCEANOGRAPHIC": "SUCCESS",
+    "AIS": "SUCCESS",
+    "IOT": "SUCCESS"
+  },
+  "agent_execution_times_ms": {
+    "SAR": 45.0,
+    "OPTICAL": 52.0,
+    "OCEANOGRAPHIC": 38.0,
+    "AIS": 24.0,
+    "IOT": 18.0
+  },
+  "evidence_summary": [
+    {
+      "evidence_id": "EVID-SAR-BASE-01",
+      "agent_name": "SAR Agent",
+      "evidence_type": "RADAR_BASELINE_BACKSCATTER",
+      "source_name": "Sentinel-1 C-SAR",
+      "source_identifier": "S1A_IW_GRDH_1SDV_20261101T084512",
+      "observation_timestamp": "2026-11-04T04:28:02.380119+00:00",
+      "ingestion_timestamp": "2026-11-04T04:28:02.380164+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "LIVE",
+      "is_simulated": false,
+      "measurement_or_indicator": "Mean Surface Backscatter",
+      "value": -14.2,
+      "unit": "dB",
+      "confidence": 0.92,
+      "uncertainty": 0.08,
+      "quality_status": "VERIFIED",
+      "processing_method": "Sigma-0 Radiometric Calibration",
+      "provenance": {
+        "provider": "Copernicus CDSE"
+      },
+      "limitations": [
+        "Nominal backscatter across surveyed marine swath."
+      ]
+    },
+    {
+      "evidence_id": "EVID-OPT-BASE-01",
+      "agent_name": "Optical Agent",
+      "evidence_type": "OPTICAL_SPECTRAL_INDEX",
+      "source_name": "Sentinel-2 MSI",
+      "source_identifier": "S2B_MSIL2A_20261101T003509",
+      "observation_timestamp": "2026-11-04T04:28:02.380119+00:00",
+      "ingestion_timestamp": "2026-11-04T04:28:02.380219+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "LIVE",
+      "is_simulated": false,
+      "measurement_or_indicator": "NDCI Chlorophyll Proxy",
+      "value": -0.04,
+      "unit": "Index (-1 to 1)",
+      "confidence": 0.88,
+      "uncertainty": 0.12,
+      "quality_status": "CALIBRATED_ESTIMATE",
+      "processing_method": "NDCI Red-Edge Ratio",
+      "provenance": {
+        "provider": "Copernicus CDSE"
+      },
+      "limitations": [
+        "Relative bio-optical proxy from preview imagery."
+      ]
+    },
+    {
+      "evidence_id": "EVID-OCN-BASE-01",
+      "agent_name": "Oceanographic Agent",
+      "evidence_type": "PHYSICAL_OCEANOGRAPHY",
+      "source_name": "Copernicus Marine (CMEMS)",
+      "source_identifier": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+      "observation_timestamp": "2026-11-04T04:28:02.380119+00:00",
+      "ingestion_timestamp": "2026-11-04T04:28:02.380235+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "MODEL_OUTPUT",
+      "is_simulated": false,
+      "measurement_or_indicator": "Sea Surface Temperature (SST)",
+      "value": 26.85,
+      "unit": "\u00b0C",
+      "confidence": 0.94,
+      "uncertainty": 0.06,
+      "quality_status": "VERIFIED",
+      "processing_method": "NEMO Hydrodynamic Assimilation",
+      "provenance": {
+        "provider": "Mercator Ocean International"
+      },
+      "limitations": [
+        "Global model resolution 1/12 degree."
+      ]
+    },
+    {
+      "evidence_id": "EVID-AIS-BASE-01",
+      "agent_name": "AIS Agent",
+      "evidence_type": "MARITIME_VESSEL_TRAFFIC",
+      "source_name": "AIS Provider (OpenAIS)",
+      "source_identifier": "AIS-ZONE-01",
+      "observation_timestamp": "2026-11-04T04:28:02.380119+00:00",
+      "ingestion_timestamp": "2026-11-04T04:28:02.380249+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "DEMO",
+      "is_simulated": true,
+      "measurement_or_indicator": "Vessel Traffic Density",
+      "value": {
+        "total_vessels": 4,
+        "anomalies": 0
+      },
+      "unit": "Vessels",
+      "confidence": 0.9,
+      "uncertainty": 0.1,
+      "quality_status": "SYNTHETIC",
+      "processing_method": "Class-A/B Transponder Stream Tracking",
+      "provenance": {
+        "provider": "ORCA AIS Demonet"
+      },
+      "limitations": [
+        "Class-A commercial vessels; smaller craft omitted."
+      ]
+    },
+    {
+      "evidence_id": "EVID-IOT-BASE-01",
+      "agent_name": "IoT Agent",
+      "evidence_type": "IN_SITU_TRANSDUCER",
+      "source_name": "ORCA Virtual ESP32 Reef Mooring",
+      "source_identifier": "ORCA-BUOY-001",
+      "observation_timestamp": "2026-11-04T04:28:02.380119+00:00",
+      "ingestion_timestamp": "2026-11-04T04:28:02.380296+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "SIMULATED",
+      "is_simulated": true,
+      "measurement_or_indicator": "In-Situ Water Temperature",
+      "value": 26.54,
+      "unit": "\u00b0C",
+      "confidence": 0.9,
+      "uncertainty": 0.1,
+      "quality_status": "SYNTHETIC",
+      "processing_method": "Dallas DS18B20 Marine Digital Probe (Simulated)",
+      "provenance": {
+        "device_id": "ORCA-BUOY-001"
+      },
+      "limitations": [
+        "Simulated in-situ reading; isolated from real-world incident scoring."
+      ]
+    }
+  ],
+  "spatial_correlations": [],
+  "temporal_correlations": [],
+  "supporting_evidence": [
+    {
+      "agent": "ORCA Swarm Fleet",
+      "finding": "Coordinated multi-agent baseline synthesis indicates environmental equilibrium.",
+      "significance": "All 5 observational domains transmit values within normal tropical coral reef thresholds."
+    }
+  ],
+  "contradicting_evidence": [],
+  "missing_evidence": [],
+  "data_quality": {
+    "overall_quality_score": 0.86,
+    "data_reliability_score": 0.88,
+    "freshness_score": 0.9,
+    "spatial_relevance_score": 0.8,
+    "temporal_relevance_score": 0.85,
+    "missing_evidence_count": 0,
+    "simulated_evidence_count": 2,
+    "quality_rules_applied": [
+      "RULE_BASELINE_EVALUATION_VERIFIED"
+    ]
+  },
+  "confidence": {
+    "confidence_score": 0.88,
+    "confidence_tier": "HIGH",
+    "corroboration_level": "5_AGENTS_CORROBORATING",
+    "contributing_real_agents": [
+      "SAR Agent",
+      "Optical Agent",
+      "Oceanographic Agent"
+    ]
+  },
+  "uncertainty": [
+    "Optical indicators derived from preview quicklook as relative bio-optical proxy.",
+    "Simulated IoT evidence is isolated from real-world empirical confidence scoring."
+  ],
+  "alternative_explanations": [
+    "Seasonal marine temperature and salinity oscillations."
+  ],
+  "nugen_reasoning": {
+    "inference_mode": "NUGEN_NEURAL_REASONING",
+    "service_status": "INFERENCE_SUCCESS",
+    "observation": "All 5 observational agents report nominal marine parameters across the Ribbon Reefs Sector.",
+    "hypothesis": "Coral reef ecosystem remains in stable oligotrophic equilibrium with normal photosynthetic efficiency.",
+    "consensus_action": "Maintain routine automated orbital and in-situ monitoring passes."
+  },
+  "recommended_follow_up": [
+    "Continue scheduled multi-agent satellite pass acquisitions and automated transponder sweeps."
+  ],
+  "data_mode_summary": {
+    "LIVE": 2,
+    "MODEL_OUTPUT": 1,
+    "DEMO": 1,
+    "SIMULATED": 1
+  },
+  "generated_at": "2026-11-04T04:28:02.380119+00:00"
+}

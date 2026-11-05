@@ -1,0 +1,136 @@
+{
+  "assessment_id": "ORCA-ASSESS-B0C35584",
+  "status": "FAILED",
+  "incident_category": "BASELINE_EVALUATION",
+  "assessment_label": "Nominal Marine Ecosystem Equilibrium (All Parameters Baseline)",
+  "geographic_area": {
+    "zone_id": "zone-empty",
+    "zone_name": "Marine Zone zone-empty",
+    "centroid_latitude": -16.8205,
+    "centroid_longitude": 146.215,
+    "boundary_or_bbox": [
+      145.5,
+      -17.5,
+      147.0,
+      -16.0
+    ]
+  },
+  "observation_period": {
+    "earliest_observation": "2026-11-04T05:13:19.176092+00:00",
+    "latest_observation": "2026-11-04T05:13:19.176092+00:00",
+    "time_span_hours": 24
+  },
+  "agent_statuses": {
+    "SAR": "FAILED",
+    "OPTICAL": "FAILED",
+    "OCEANOGRAPHIC": "FAILED",
+    "AIS": "FAILED",
+    "IOT": "FAILED"
+  },
+  "agent_execution_times_ms": {
+    "SAR": 0.86,
+    "OPTICAL": 5.94,
+    "OCEANOGRAPHIC": 0.66,
+    "AIS": 0.36,
+    "IOT": 0.31
+  },
+  "evidence_summary": [],
+  "spatial_correlations": [],
+  "temporal_correlations": [],
+  "supporting_evidence": [
+    {
+      "agent": "ORCA Multi-Agent Fleet",
+      "finding": "Synthesized 0 evidence records across available agents; all observations remain within nominal marine ranges.",
+      "significance": "No anomalous backscatter reduction, water quality deviations, vessel irregularities, or extreme thermal pulses detected."
+    }
+  ],
+  "contradicting_evidence": [],
+  "missing_evidence": [
+    "Sentinel-1 SAR C-Band Imagery (No staged SAR acquisition in target window)",
+    "Sentinel-2 Optical Multispectral Bands (No cloud-free optical acquisition)",
+    "Copernicus Marine Physical Oceanography (In-situ CTD or Mercator model offline)",
+    "AIS Vessel Kinematics (No authorized vessel transponder feed in target area)",
+    "In-Situ Marine Buoy Telemetry (IoT station unmonitored or unconfigured)"
+  ],
+  "data_quality": {
+    "overall_quality_score": 0.0,
+    "data_reliability_score": 0.0,
+    "freshness_score": 0.0,
+    "spatial_relevance_score": 0.0,
+    "temporal_relevance_score": 0.0,
+    "missing_evidence_count": 5,
+    "simulated_evidence_count": 0,
+    "quality_rules_applied": [
+      "RULE_EMPTY_EVIDENCE_ZERO_SCORE"
+    ]
+  },
+  "confidence": {
+    "confidence_score": 0.0,
+    "confidence_tier": "NO_EVIDENCE",
+    "corroboration_level": "NONE",
+    "basis": "Zero evidence records collected across all agents."
+  },
+  "uncertainty": [
+    "No evidence records were returned by any engaged agent."
+  ],
+  "alternative_explanations": [],
+  "nugen_reasoning": {
+    "inference_mode": "NUGEN_NEURAL_REASONING",
+    "service_status": "INFERENCE_SUCCESS",
+    "model_id": "model_01m69kv0e5vb38h7",
+    "execution_latency_ms": 7467.5,
+    "observation": "Baseline evaluation of marine zone reveals no immediate anomalies or active vessel transponder activity.",
+    "hypothesis": "No immediate marine pollution incidents are detected.",
+    "reasoning_chain": [
+      {
+        "step": 1,
+        "agent": "Sentinel-1 SAR C-Band",
+        "claim": "No SAR anomalies detected in the baseline evaluation."
+      },
+      {
+        "step": 2,
+        "agent": "Sentinel-2 MSI Optical",
+        "claim": "No optical anomalies detected in the baseline evaluation."
+      },
+      {
+        "step": 3,
+        "consensus": "Based on the baseline evaluation, no immediate marine pollution incidents are detected."
+      }
+    ],
+    "consensus_action": "No immediate action required.",
+    "confidence_score": 95.0,
+    "severity": "INFO",
+    "alert_type": "NO_ANOMALY",
+    "missing_evidence": [],
+    "error_message": null,
+    "raw_model_response": {
+      "observation": "Baseline evaluation of marine zone reveals no immediate anomalies or active vessel transponder activity.",
+      "hypothesis": "No immediate marine pollution incidents are detected.",
+      "reasoning_chain": [
+        {
+          "step": 1,
+          "agent": "Sentinel-1 SAR C-Band",
+          "claim": "No SAR anomalies detected in the baseline evaluation."
+        },
+        {
+          "step": 2,
+          "agent": "Sentinel-2 MSI Optical",
+          "claim": "No optical anomalies detected in the baseline evaluation."
+        },
+        {
+          "step": 3,
+          "consensus": "Based on the baseline evaluation, no immediate marine pollution incidents are detected."
+        }
+      ],
+      "consensus_action": "No immediate action required.",
+      "confidence_score": 95,
+      "severity": "INFO",
+      "alert_type": "NO_ANOMALY"
+    }
+  },
+  "recommended_follow_up": [
+    "Continue scheduled automated multi-agent surveillance and satellite pass monitoring."
+  ],
+  "data_mode_summary": {},
+  "generated_at": "2026-11-04T05:13:19.176092+00:00"
+}

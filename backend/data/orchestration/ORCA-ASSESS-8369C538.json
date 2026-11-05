@@ -1,0 +1,891 @@
+{
+  "assessment_id": "ORCA-ASSESS-8369C538",
+  "status": "PARTIAL",
+  "incident_category": "POSSIBLE_WATER_QUALITY_ANOMALY",
+  "assessment_label": "Possible Coastal Sediment Runoff or Chlorophyll/Algal Bloom",
+  "geographic_area": {
+    "zone_id": "zone-01",
+    "zone_name": "Marine Zone zone-01",
+    "centroid_latitude": -16.8205,
+    "centroid_longitude": 146.215,
+    "boundary_or_bbox": [
+      145.5,
+      -17.5,
+      147.0,
+      -16.0
+    ]
+  },
+  "observation_period": {
+    "earliest_observation": "2026-11-04T05:25:56.183102+00:00",
+    "latest_observation": "2026-11-04T05:26:12.765904+00:00",
+    "time_span_hours": 24
+  },
+  "agent_statuses": {
+    "SAR": "FAILED",
+    "OPTICAL": "SUCCESS",
+    "OCEANOGRAPHIC": "SUCCESS",
+    "AIS": "SUCCESS",
+    "IOT": "SUCCESS"
+  },
+  "agent_execution_times_ms": {
+    "SAR": 1.91,
+    "OPTICAL": 0.27,
+    "OCEANOGRAPHIC": 0.04,
+    "AIS": 1.15,
+    "IOT": 0.12
+  },
+  "evidence_summary": [
+    {
+      "evidence_id": "EVID-OPT-F65818",
+      "agent_name": "Optical Agent",
+      "evidence_type": "OPTICAL_SPECTRAL_INDEX",
+      "source_name": "Sentinel-2 MSI",
+      "source_identifier": "TEST_S2_NUGEN_FLOW",
+      "observation_timestamp": "2026-11-04T05:25:56.183102+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.764630+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "LIVE",
+      "is_simulated": false,
+      "measurement_or_indicator": "NDCI Chlorophyll Proxy",
+      "value": 0.6,
+      "unit": "Index (-1 to 1)",
+      "confidence": 0.82,
+      "uncertainty": 0.18,
+      "quality_status": "CALIBRATED_ESTIMATE",
+      "processing_method": "NDCI Normalized Difference Red-Edge / Red Ratio (Proxy)",
+      "provenance": {
+        "product_id": "TEST_S2_NUGEN_FLOW",
+        "provider": "Copernicus CDSE"
+      },
+      "limitations": [
+        "Calculated from preview quicklook as relative bio-optical proxy.",
+        "Direct chlorophyll-a quantitative lab comparison requires authenticated native Level-2A bands."
+      ]
+    },
+    {
+      "evidence_id": "EVID-OPT-27C46F",
+      "agent_name": "Optical Agent",
+      "evidence_type": "OPTICAL_SPECTRAL_INDEX",
+      "source_name": "Sentinel-2 MSI",
+      "source_identifier": "TEST_S2_NUGEN_FLOW",
+      "observation_timestamp": "2026-11-04T05:25:56.183102+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.764659+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "LIVE",
+      "is_simulated": false,
+      "measurement_or_indicator": "Optical Turbidity SPM Proxy",
+      "value": 0.1,
+      "unit": "Ratio (0 to 1)",
+      "confidence": 0.85,
+      "uncertainty": 0.15,
+      "quality_status": "CALIBRATED_ESTIMATE",
+      "processing_method": "Aquatic Red-Channel Scattering Model",
+      "provenance": {
+        "product_id": "TEST_S2_NUGEN_FLOW"
+      },
+      "limitations": [
+        "Turbidity proxy represents optical scattering, not direct chemical toxin measurement."
+      ]
+    },
+    {
+      "evidence_id": "EVID-OCN-1A54D0",
+      "agent_name": "Oceanographic Agent",
+      "evidence_type": "PHYSICAL_OCEANOGRAPHY",
+      "source_name": "Copernicus Marine (CMEMS)",
+      "source_identifier": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+      "observation_timestamp": "2026-11-04T05:26:12.764693+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.764704+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "MODEL_OUTPUT",
+      "is_simulated": false,
+      "measurement_or_indicator": "Sea Surface Temperature (SST)",
+      "value": 26.8,
+      "unit": "\u00b0C",
+      "confidence": 0.92,
+      "uncertainty": 0.08,
+      "quality_status": "VERIFIED",
+      "processing_method": "NEMO Global 1/12\u00b0 Hydrodynamic Model Assimilation",
+      "provenance": {
+        "provider": "Mercator Ocean International"
+      },
+      "limitations": [
+        "Model reanalysis resolution 1/12 degree (~9 km grid spacing)."
+      ]
+    },
+    {
+      "evidence_id": "EVID-OCN-51F0FE",
+      "agent_name": "Oceanographic Agent",
+      "evidence_type": "PHYSICAL_OCEANOGRAPHY",
+      "source_name": "Copernicus Marine (CMEMS)",
+      "source_identifier": "CMEMS-CURRENT-MODEL",
+      "observation_timestamp": "2026-11-04T05:26:12.764693+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.764714+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "MODEL_OUTPUT",
+      "is_simulated": false,
+      "measurement_or_indicator": "Ocean Surface Current Vector",
+      "value": {
+        "speed_m_s": 0.42,
+        "direction_deg": 128.0,
+        "current_u": 0.26,
+        "current_v": -0.33
+      },
+      "unit": "m/s",
+      "confidence": 0.88,
+      "uncertainty": 0.12,
+      "quality_status": "VERIFIED",
+      "processing_method": "Ekman Surface Layer Hydrodynamics",
+      "provenance": {
+        "provider": "Copernicus Marine"
+      },
+      "limitations": [
+        "Deep ocean current model; nearshore micro-eddy bathymetric steering not fully resolved."
+      ]
+    },
+    {
+      "evidence_id": "EVID-AIS-6BE1F0",
+      "agent_name": "AIS Agent",
+      "evidence_type": "MARITIME_VESSEL_TRAFFIC",
+      "source_name": "AIS Provider (AISHub)",
+      "source_identifier": "AIS-FLEET-zone-01",
+      "observation_timestamp": "2026-11-04T05:26:12.765830+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.765856+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "DEMO",
+      "is_simulated": true,
+      "measurement_or_indicator": "Active Vessel Traffic Density",
+      "value": {
+        "total_vessels": 0,
+        "anomalous_vessels": 0,
+        "tracked_mmsi_list": []
+      },
+      "unit": "Vessels",
+      "confidence": 0.85,
+      "uncertainty": 0.15,
+      "quality_status": "SYNTHETIC",
+      "processing_method": "VHF AIS Transponder Kinematic Telemetry",
+      "provenance": {
+        "provider": "AISHub",
+        "connection": "NOT CONNECTED"
+      },
+      "limitations": [
+        "Vessels under 300 GT are not required to transmit Class-A AIS under SOLAS.",
+        "AIS signal proximity does not constitute proof of liability or pollution causation."
+      ]
+    },
+    {
+      "evidence_id": "EVID-IOT-19BCB9",
+      "agent_name": "IoT Agent",
+      "evidence_type": "IN_SITU_TRANSDUCER",
+      "source_name": "ORCA Virtual ESP32 Reef Mooring (ORCA-BUOY-001)",
+      "source_identifier": "ORCA-BUOY-001",
+      "observation_timestamp": "2026-11-04T05:26:12.765904+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.765985+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "SIMULATED",
+      "is_simulated": true,
+      "measurement_or_indicator": "In-Situ Turbidity",
+      "value": 1.61,
+      "unit": "NTU",
+      "confidence": 0.88,
+      "uncertainty": 0.12,
+      "quality_status": "SYNTHETIC",
+      "processing_method": "DFRobot Optical Nephelometer (Simulated Physics)",
+      "provenance": {
+        "device_id": "ORCA-BUOY-001",
+        "firmware": "v2.4.0-orca-virtual-esp32"
+      },
+      "limitations": [
+        "Generated by Virtual ESP32 simulation model (data_mode: SIMULATED).",
+        "Must NOT be asserted as empirical proof of an active marine pollution incident."
+      ]
+    },
+    {
+      "evidence_id": "EVID-IOT-01CDB9",
+      "agent_name": "IoT Agent",
+      "evidence_type": "IN_SITU_TRANSDUCER",
+      "source_name": "ORCA Virtual ESP32 Reef Mooring (ORCA-BUOY-001)",
+      "source_identifier": "ORCA-BUOY-001",
+      "observation_timestamp": "2026-11-04T05:26:12.765904+00:00",
+      "ingestion_timestamp": "2026-11-04T05:26:12.765996+00:00",
+      "latitude": -16.8205,
+      "longitude": 146.215,
+      "spatial_coverage": null,
+      "data_mode": "SIMULATED",
+      "is_simulated": true,
+      "measurement_or_indicator": "In-Situ Dissolved Oxygen",
+      "value": 6.93,
+      "unit": "mg/L",
+      "confidence": 0.89,
+      "uncertainty": 0.11,
+      "quality_status": "SYNTHETIC",
+      "processing_method": "Atlas Scientific Galvanic DO Probe (Simulated)",
+      "provenance": {
+        "device_id": "ORCA-BUOY-001"
+      },
+      "limitations": [
+        "Simulated in-situ reading; isolated from real-world incident scoring."
+      ]
+    }
+  ],
+  "spatial_correlations": [
+    {
+      "correlation_id": "SPAT-1283FE87",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OPT-27C46F",
+      "agent_a": "Optical Agent",
+      "agent_b": "Optical Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and Optical Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-44A4CD09",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OCN-1A54D0",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and Oceanographic Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-6520F239",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and Oceanographic Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-8C170E6C",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Optical Agent",
+      "agent_b": "AIS Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and AIS Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-6AE15BE0",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-DFAA213E",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-8631F5F4",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-OCN-1A54D0",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and Oceanographic Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-4A665645",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and Oceanographic Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-F2A3129F",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Optical Agent",
+      "agent_b": "AIS Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and AIS Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-EB544272",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-EF17F9A4",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Optical Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-54FDE49F",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "Oceanographic Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and Oceanographic Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-5C111E4F",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "AIS Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and AIS Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-2E884C4A",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-BF682F86",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-5309D1C5",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "AIS Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and AIS Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-5E49E023",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-97A36C9A",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: Oceanographic Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-045AAA28",
+      "evidence_id_a": "EVID-AIS-6BE1F0",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "AIS Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: AIS Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-B02B4AE5",
+      "evidence_id_a": "EVID-AIS-6BE1F0",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "AIS Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: AIS Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    },
+    {
+      "correlation_id": "SPAT-FB7B6FC6",
+      "evidence_id_a": "EVID-IOT-19BCB9",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "IoT Agent",
+      "agent_b": "IoT Agent",
+      "distance_km": 0.0,
+      "spatial_relationship": "INTERSECTS",
+      "correlation_radius_km": 25.0,
+      "proximity_summary": "Geographic footprint overlap: IoT Agent and IoT Agent coincide.",
+      "spatial_confidence_factor": 0.95,
+      "causation_disclaimer": "Scientific Notice: Spatial proximity is supporting contextual evidence, NOT empirical proof of causation or liability."
+    }
+  ],
+  "temporal_correlations": [
+    {
+      "correlation_id": "TEMP-1D3C72BA",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OPT-27C46F",
+      "agent_a": "Optical Agent",
+      "agent_b": "Optical Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-7D6D49D5",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OCN-1A54D0",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-40A3A4FB",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-3A55D485",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Optical Agent",
+      "agent_b": "AIS Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-200AC288",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-9DAF882A",
+      "evidence_id_a": "EVID-OPT-F65818",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-952482B8",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-OCN-1A54D0",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-9B5FB11A",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Optical Agent",
+      "agent_b": "Oceanographic Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-FFBB1042",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Optical Agent",
+      "agent_b": "AIS Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-8255C700",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-F1A0AA6B",
+      "evidence_id_a": "EVID-OPT-27C46F",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Optical Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-B234CDE5",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-OCN-51F0FE",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "Oceanographic Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-8630FC43",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "AIS Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-AF1EBCBA",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-2C4113E9",
+      "evidence_id_a": "EVID-OCN-1A54D0",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-79A17646",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-AIS-6BE1F0",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "AIS Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-CBA05E7D",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-354D9C60",
+      "evidence_id_a": "EVID-OCN-51F0FE",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "Oceanographic Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-B3096D49",
+      "evidence_id_a": "EVID-AIS-6BE1F0",
+      "evidence_id_b": "EVID-IOT-19BCB9",
+      "agent_a": "AIS Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-64731BF3",
+      "evidence_id_a": "EVID-AIS-6BE1F0",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "AIS Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    },
+    {
+      "correlation_id": "TEMP-0D5872E0",
+      "evidence_id_a": "EVID-IOT-19BCB9",
+      "evidence_id_b": "EVID-IOT-01CDB9",
+      "agent_a": "IoT Agent",
+      "agent_b": "IoT Agent",
+      "time_difference_hours": 0.0,
+      "applicable_window_hours": 24.0,
+      "temporal_compatibility": "COINCIDENT",
+      "freshness_status_a": "REAL_TIME (< 30 min)",
+      "freshness_status_b": "REAL_TIME (< 30 min)",
+      "drift_analysis": null
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "agent": "Optical Agent",
+      "evidence_id": "EVID-OPT-F65818",
+      "finding": "Optical spectral index anomaly: NDCI Chlorophyll Proxy = 0.6 Index (-1 to 1)",
+      "significance": "Elevated red-edge/NIR or green-red band reflectance indicates suspended sediment or photosynthetic phytoplankton pigments."
+    },
+    {
+      "agent": "Optical Agent",
+      "evidence_id": "EVID-OPT-27C46F",
+      "finding": "Optical spectral index anomaly: Optical Turbidity SPM Proxy = 0.1 Ratio (0 to 1)",
+      "significance": "Elevated red-edge/NIR or green-red band reflectance indicates suspended sediment or photosynthetic phytoplankton pigments."
+    },
+    {
+      "agent": "IoT Agent",
+      "evidence_id": "EVID-IOT-19BCB9",
+      "finding": "In-situ sensor reading: In-Situ Turbidity = 1.61 NTU (DATA TIER: SIMULATED)",
+      "significance": "Simulated IoT buoy demonstrates concordant multi-parameter perturbation (synthetic context only)."
+    },
+    {
+      "agent": "IoT Agent",
+      "evidence_id": "EVID-IOT-01CDB9",
+      "finding": "In-situ sensor reading: In-Situ Dissolved Oxygen = 6.93 mg/L (DATA TIER: SIMULATED)",
+      "significance": "Simulated IoT buoy demonstrates concordant multi-parameter perturbation (synthetic context only)."
+    }
+  ],
+  "contradicting_evidence": [],
+  "missing_evidence": [
+    "Sentinel-1 SAR C-Band Imagery (No staged SAR acquisition in target window)"
+  ],
+  "data_quality": {
+    "overall_quality_score": 0.83,
+    "data_reliability_score": 0.69,
+    "freshness_score": 0.79,
+    "spatial_relevance_score": 0.95,
+    "temporal_relevance_score": 1.0,
+    "missing_evidence_count": 1,
+    "simulated_evidence_count": 3,
+    "quality_rules_applied": [
+      "RULE_SPATIAL_PROXIMITY_EVALUATED: 21 correlations",
+      "RULE_SIMULATION_ISOLATION_APPLIED: AIS Agent marked SYNTHETIC",
+      "RULE_TEMPORAL_SYNCHRONIZATION_EVALUATED: 21 correlations",
+      "RULE_SIMULATION_ISOLATION_APPLIED: IoT Agent marked SYNTHETIC",
+      "RULE_MODEL_OUTPUT_RELIABILITY_CAP: Oceanographic Agent"
+    ]
+  },
+  "confidence": {
+    "confidence_score": 0.7,
+    "confidence_tier": "MODERATE",
+    "corroboration_level": "2_AGENTS_CORROBORATING",
+    "contributing_real_agents": [
+      "Optical Agent",
+      "Oceanographic Agent"
+    ],
+    "positive_factors": [
+      "Corroborated by 2 distinct observational agents (Optical Agent, Oceanographic Agent).",
+      "Cross-agent observations synchronized within high temporal compatibility window (<= 6 hrs)."
+    ],
+    "penalties_applied": 0.0
+  },
+  "uncertainty": [
+    "Contains 3 simulated IoT evidence record(s). Simulated sensor data is isolated and does NOT contribute to real-world incident confidence."
+  ],
+  "alternative_explanations": [
+    "Riverine stormwater sediment discharge following heavy coastal rainfall.",
+    "Shallow water bottom sediment resuspension from tidal currents or wind waves.",
+    "Harmless non-toxic seasonal diatom bloom."
+  ],
+  "nugen_reasoning": {
+    "inference_mode": "HEURISTIC_RULE_BASED",
+    "service_status": "INFERENCE_FAILED",
+    "model_id": "model_01m69kv0e5vb38h7",
+    "execution_latency_ms": 18335.06,
+    "observation": "",
+    "hypothesis": "",
+    "reasoning_chain": [],
+    "consensus_action": "",
+    "confidence_score": 0.0,
+    "severity": "INFO",
+    "alert_type": null,
+    "missing_evidence": [
+      "Physical ESP32 Hardware (NOT CONNECTED)"
+    ],
+    "error_message": "Model returned non-JSON text: {\n  \"observation\": \"Possibility of a water quality anomaly detected in Zone-zone-01 (ID: zone-01). The SAR imagery shows",
+    "raw_model_response": null
+  },
+  "recommended_follow_up": [
+    "Inspect Copernicus Marine river runoff discharge model estimates for adjacent catchment basins.",
+    "Perform in-situ water grab sampling for laboratory chlorophyll HPLC and suspended solids filtration.",
+    "Task repeat optical observation under favorable illumination to track plume dissipation."
+  ],
+  "data_mode_summary": {
+    "LIVE": 2,
+    "MODEL_OUTPUT": 2,
+    "DEMO": 1,
+    "SIMULATED": 2
+  },
+  "generated_at": "2026-11-04T05:26:12.762377+00:00"
+}

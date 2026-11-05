@@ -1,0 +1,49 @@
+{
+  "assessment_id": "ORCA-ASSESS-TEST-999",
+  "status": "COMPLETED",
+  "incident_category": "BASELINE_EVALUATION",
+  "assessment_label": "Mock Test Assessment",
+  "geographic_area": {
+    "zone_id": "zone-test",
+    "centroid": [
+      -16.0,
+      146.0
+    ]
+  },
+  "observation_period": {
+    "earliest": "2026-11-04T00:00:00Z",
+    "latest": "2026-11-04T01:00:00Z"
+  },
+  "agent_statuses": {
+    "SAR": "SUCCESS"
+  },
+  "agent_execution_times_ms": {
+    "SAR": 45.0
+  },
+  "evidence_summary": [],
+  "spatial_correlations": [],
+  "temporal_correlations": [],
+  "supporting_evidence": [],
+  "contradicting_evidence": [],
+  "missing_evidence": [],
+  "data_quality": {
+    "overall_quality_score": 0.9,
+    "data_reliability_score": 0.9,
+    "freshness_score": 0.9,
+    "spatial_relevance_score": 0.9,
+    "temporal_relevance_score": 0.9,
+    "missing_evidence_count": 0,
+    "simulated_evidence_count": 0,
+    "quality_rules_applied": []
+  },
+  "confidence": {
+    "confidence_score": 0.85,
+    "confidence_tier": "HIGH"
+  },
+  "uncertainty": [],
+  "alternative_explanations": [],
+  "nugen_reasoning": {},
+  "recommended_follow_up": [],
+  "data_mode_summary": {},
+  "generated_at": "2026-11-04T05:30:13.928313+00:00"
+}

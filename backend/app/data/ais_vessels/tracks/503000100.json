@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp_utc": "2026-11-03T12:30:00Z",
+    "latitude": -16.85,
+    "longitude": 146.2,
+    "sog_knots": 14.5,
+    "cog_degrees": 125.0,
+    "nav_status": "Under way",
+    "nav_status_code": null
+  }
+]
