@@ -6,6 +6,7 @@ import {
   MapPin, 
   ShieldCheck
 } from 'lucide-react';
+import { API_BASE } from '../services/api';
 
 export const Settings: React.FC = () => {
   const [dhwThreshold, setDhwThreshold] = useState<number>(4.0);
@@ -168,7 +169,7 @@ export const Settings: React.FC = () => {
               <input
                 type="text"
                 disabled
-                value="http://localhost:8000/api/v1"
+                value={API_BASE}
                 className="w-full bg-navy-900/60 border border-surface-border text-xs text-slate-400 rounded-lg px-3 py-2 font-mono"
               />
             </div>

@@ -60,11 +60,42 @@ import type {
   UnifiedEvidenceRecord
 } from '../types';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
+export function normalizeApiBaseUrl(rawUrl?: string): string {
+  let url = (rawUrl || '').trim();
+
+  // In production builds, ensure incorrect localhost references are replaced with production backend
+  if (import.meta.env.PROD) {
+    if (!url || url.includes('localhost') || url.includes('127.0.0.1')) {
+      url = 'https://orca-marine-backend-wmvk.onrender.com/api/v1';
+    }
+  } else {
+    // Local development fallback
+    if (!url) {
+      url = 'http://localhost:8000/api/v1';
+    }
+  }
+
+  // Remove any trailing slashes
+  url = url.replace(/\/+$/, '');
+
+  // Ensure /api/v1 is included exactly once
+  if (!url.endsWith('/api/v1')) {
+    if (url.endsWith('/api')) {
+      url = `${url}/v1`;
+    } else {
+      url = `${url}/api/v1`;
+    }
+  }
+
+  return url;
+}
+
+export const API_BASE = normalizeApiBaseUrl(import.meta.env.VITE_API_BASE_URL);
 
 async function fetchJson<T>(endpoint: string, fallback: T, options?: RequestInit): Promise<T> {
   try {
-    const res = await fetch(`${API_BASE}${endpoint}`, {
+    const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+    const res = await fetch(`${API_BASE}${cleanEndpoint}`, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +103,7 @@ async function fetchJson<T>(endpoint: string, fallback: T, options?: RequestInit
       }
     });
     if (!res.ok) {
-      console.warn(`API call ${endpoint} returned status ${res.status}`);
+      console.warn(`API call ${cleanEndpoint} returned status ${res.status}`);
       return fallback;
     }
     return (await res.json()) as T;

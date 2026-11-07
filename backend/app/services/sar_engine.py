@@ -531,17 +531,40 @@ class SAREngine:
         Report active vs specialized SAR and geospatial dependencies.
         Explains what libraries are running and documents any missing native toolchains.
         """
-        import numpy as np
-        import scipy
-        import PIL
-        import sklearn
+        installed: Dict[str, str] = {}
+        missing_errors: List[str] = []
 
-        installed = {
-            "numpy": np.__version__,
-            "scipy": scipy.__version__,
-            "pillow": PIL.__version__,
-            "scikit-learn": sklearn.__version__,
-        }
+        # Check NumPy
+        try:
+            import numpy as np
+            installed["numpy"] = getattr(np, "__version__", "INSTALLED")
+        except Exception as e:
+            installed["numpy"] = f"NOT INSTALLED ({e})"
+            missing_errors.append(f"numpy: {e}")
+
+        # Check SciPy
+        try:
+            import scipy
+            installed["scipy"] = getattr(scipy, "__version__", "INSTALLED")
+        except Exception as e:
+            installed["scipy"] = f"NOT INSTALLED ({e})"
+            missing_errors.append(f"scipy: {e}")
+
+        # Check Pillow
+        try:
+            import PIL
+            installed["pillow"] = getattr(PIL, "__version__", "INSTALLED")
+        except Exception as e:
+            installed["pillow"] = f"NOT INSTALLED ({e})"
+            missing_errors.append(f"pillow: {e}")
+
+        # Check scikit-learn
+        try:
+            import sklearn
+            installed["scikit-learn"] = getattr(sklearn, "__version__", "INSTALLED")
+        except Exception as e:
+            installed["scikit-learn"] = f"NOT INSTALLED ({e})"
+            missing_errors.append(f"scikit-learn: {e}")
 
         specialized = {
             "esa_snap_engine": {
@@ -561,16 +584,20 @@ class SAREngine:
             }
         }
 
+        system_notes = (
+            "The mathematical SAR pipeline (radiometric dB normalization, Refined Lee speckle filter, "
+            "land masking, and adaptive threshold segmentation) is fully operational. "
+            "For heavy Sentinel-1 SLC raw burst interferometry, ESA SNAP or GDAL may be added as an optional external microservice."
+        )
+        if missing_errors:
+            system_notes += f" Informative status: {'; '.join(missing_errors)}."
+
         return SARDependencyStatus(
             engine_name="ORCA Scientific SAR Processing Suite",
             active_runtime="Python 3.14 + NumPy / SciPy High-Performance Vectorized Kernel",
             installed_libraries=installed,
             specialized_libraries=specialized,
-            system_notes=(
-                "The mathematical SAR pipeline (radiometric dB normalization, Refined Lee speckle filter, "
-                "land masking, and adaptive threshold segmentation) is fully operational. "
-                "For heavy Sentinel-1 SLC raw burst interferometry, ESA SNAP or GDAL may be added as an optional external microservice."
-            )
+            system_notes=system_notes
         )
 
     def _apply_speckle_filter(self, data: np.ndarray, method: str, window_size: int) -> np.ndarray:

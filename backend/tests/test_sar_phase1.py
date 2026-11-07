@@ -327,6 +327,7 @@ class TestSARDependenciesAndLedgerEndpoints:
         assert "numpy" in libs
         assert "scipy" in libs
         assert "pillow" in libs
+        assert "scikit-learn" in libs
 
     def test_sar_analyses_ledger_endpoint(self):
         """Verify /api/v1/sar/analyses returns stored analyses."""

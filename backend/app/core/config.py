@@ -71,10 +71,34 @@ class Settings:
     # CORS
     @property
     def CORS_ORIGINS(self) -> List[str]:
-        raw = os.getenv("BACKEND_CORS_ORIGINS", '["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]')
+        default_origins = [
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "http://localhost:3000",
+            "https://orca-final-rose.vercel.app"
+        ]
+        raw = os.getenv("BACKEND_CORS_ORIGINS", "")
+        if not raw:
+            return default_origins
         try:
-            return json.loads(raw)
+            origins = json.loads(raw)
+            if isinstance(origins, list):
+                if "https://orca-final-rose.vercel.app" not in origins:
+                    origins.append("https://orca-final-rose.vercel.app")
+                return origins
+            return [str(origins)]
         except Exception:
-            return ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000"]
+            # Handle comma-separated list: "https://orca-final-rose.vercel.app,http://localhost:5173"
+            if "," in raw:
+                origins = [o.strip() for o in raw.split(",") if o.strip()]
+                if "https://orca-final-rose.vercel.app" not in origins:
+                    origins.append("https://orca-final-rose.vercel.app")
+                return origins
+            if raw.strip():
+                origins = [raw.strip()]
+                if "https://orca-final-rose.vercel.app" not in origins:
+                    origins.append("https://orca-final-rose.vercel.app")
+                return origins
+            return default_origins
 
 settings = Settings()
